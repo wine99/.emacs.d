@@ -14,6 +14,10 @@
 
 (use-package racket-mode)
 
+(use-package haskell-mode)
+
+(use-package company)
+
 (use-package paredit
   :ensure t
   :config
@@ -28,5 +32,10 @@
     (bind-keys :map paredit-mode-map
 	       ("M-[" . paredit-wrap-square)
 	       ("M-{" . paredit-wrap-curly))))
+
+;(use-package vscode-dark-plus-theme
+;  :ensure t
+;  :config
+;  (load-theme 'vscode-dark-plus t))
 
 (provide 'upackage)

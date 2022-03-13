@@ -8,3 +8,5 @@
 !early-init.el
 !elisp
 !elisp/*
+!themes
+!themes/*
