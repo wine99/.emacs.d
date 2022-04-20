@@ -11,13 +11,10 @@
 
 (show-paren-mode 1)
 
-(set-face-attribute 'default nil :font (font-spec :family "FiraMono Nerd Font" :size 18))
+(set-face-attribute 'default nil :font (font-spec :family "Fira Code" :size 16))
 
 (when *is-windows*
-  (set-fontset-font t '(#x2ff0 . #x9ffc) (font-spec :family "Microsoft YaHei" :size 18)))
-
-(add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes"))
-(load-theme 'vscode-dark-plus t)
+  (set-fontset-font t '(#x2ff0 . #x9ffc) (font-spec :family "Microsoft YaHei" :size 16)))
 
 (setq package-archives
       '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
@@ -29,9 +26,8 @@
 (setq package-check-signature nil)
 (require 'package)
 
-(add-to-list
- 'load-path
- (expand-file-name (concat user-emacs-directory "elisp")))
-
+(add-to-list 'load-path (concat user-emacs-directory "elisp"))
 (require 'upackage)
 
+(load-file (let ((coding-system-for-read 'utf-8))
+                (shell-command-to-string "agda-mode.exe locate")))
