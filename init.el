@@ -12,9 +12,11 @@
 (show-paren-mode 1)
 
 (set-face-attribute 'default nil :font (font-spec :family "Fira Code" :size 16))
+(set-fontset-font "fontset-default" nil
+                  (font-spec :family "DejaVuSansMono NF" :size 16))
 
 (when *is-windows*
-  (set-fontset-font t '(#x2ff0 . #x9ffc) (font-spec :family "Microsoft YaHei" :size 16)))
+  (set-fontset-font t '(#x2ff0 . #x9fff) (font-spec :family "Microsoft YaHei" :size 16)))
 
 (setq package-archives
       '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
@@ -30,4 +32,4 @@
 (require 'upackage)
 
 (load-file (let ((coding-system-for-read 'utf-8))
-                (shell-command-to-string "agda-mode.exe locate")))
+             (shell-command-to-string "agda-mode.exe locate")))
