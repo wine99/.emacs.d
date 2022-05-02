@@ -2,12 +2,19 @@
   (or (eq system-type 'ms-dos)
       (eq system-type 'windows-nt)))
 
+
+(setq custom-file (concat user-emacs-directory "custom.el"))
+;; (setq auto-save-file-name-transforms
+;;       `(("." ,(concat user-emacs-directory "auto-save/") t))
+;;       backup-directory-alist
+;;       `(("." ,(concat user-emacs-directory "backup/"))))
 (setq make-backup-files nil)
+
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(setq inhibit-startup-screen t)
+;; (setq inhibit-startup-screen t)
 
 (show-paren-mode 1)
 
@@ -33,3 +40,6 @@
 
 (load-file (let ((coding-system-for-read 'utf-8))
              (shell-command-to-string "agda-mode.exe locate")))
+
+
+(load custom-file t)
